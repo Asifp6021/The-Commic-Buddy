@@ -14,4 +14,10 @@ and created superherolist all the methods for deleting and adding going to be in
 ***************** step 2 ****************
 addeed event listener on the button and created some variable and grab the value of the input and assign it. and i used array distructure for it.
 
+***************** step 3 ****************
+
+//instantiating the SuperHeroEntry class and SuperHeroList
+
+created methods for the superHeroList to addSuperHero and passed it superHeroEntry entry as parameter.
+
 - - - - - - - -- - -  -- -- - - - - -- - - - - - - - -- -- - - - - - -  --- - -- - - - - -- - --  -- -  - - - -- - - - -
