@@ -56,6 +56,18 @@ class SuperHeroList {
 	}
 }
 
+class StoreSuperHero {
+	static getSuperHero() {
+		let superHeros;
+		if (localStorage.getItem('superHeros') === null) {
+			superHeros = [];
+		} else {
+			superHeros = JSON.parse(localStorage.getItem('superHeros'));
+		}
+		return superHeros;
+	}
+}
+
 // - - - - - - - -- - -  -- -- - - - - -- - - - - - - Events  - -- -- - - - - - -  --- - -- - - - - -- - --  -- -  - - - -- - - - -
 
 const form = document.querySelector('.superhero-form');
@@ -92,11 +104,17 @@ form.addEventListener('submit', function (e) {
 		list.addSuperHero(entry);
 		//to clear inputs
 		list.clearInputs();
+		// success message
 		list.validationSuccess();
+		//adding superHero to local storage
+		StoreSuperHero.addSuperHero(entry);
+
 	}
 
 	console.log(list);
 });
+
+// - - - - - - - -- - -  -- -- - - - - -- - - - - - - - - - - - - - -- - -  -- -- - - - - --
 
 // deleting the superHro
 const listData = document.querySelector('.superhero-list-data');

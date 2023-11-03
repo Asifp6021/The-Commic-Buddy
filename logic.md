@@ -21,3 +21,9 @@ addeed event listener on the button and created some variable and grab the value
 created methods for the superHeroList to addSuperHero and passed it superHeroEntry entry as parameter.
 
 - - - - - - - -- - -  -- -- - - - - -- - - - - - - - -- -- - - - - - -  --- - -- - - - - -- - --  -- -  - - - -- - - - -
+
+i am going to store data into local storage and for that i created new class StoreSuperHero(). and i used static.  
+
+i used static because when we use static we don't need to intantisiate it. we don't have to write more code and our code remains cleaner.
+
+go and read about static.
