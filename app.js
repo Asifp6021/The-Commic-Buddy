@@ -142,6 +142,13 @@ const listData = document.querySelector('.superhero-list-data');
 listData.addEventListener('click', function (e) {
 	if (e.target.className === 'fas fa-trash') {
 		const trash = e.target.parentNode;
+
+		const clickedSuperHero =
+			e.target.previousElementSimbling.previousElementSimbling
+				.previousElementSimbling;
+
+		StoreSuperHero.removeSuperHero(clickedSuperHero);
+		
 		trash.remove();
 	}
 });

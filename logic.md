@@ -27,3 +27,10 @@ i am going to store data into local storage and for that i created new class Sto
 i used static because when we use static we don't need to intantisiate it. we don't have to write more code and our code remains cleaner.
 
 go and read about static.
+
+
+- - - - - - - -- - -  -- -- - - - - -- - - - - - - - -- -- - - - - - -  --- - -- - - - - -- - --  -- -  - - - -- - - - -
+
+now i want to delete superhoro list from webpage and also from localStorage.
+
+if you see in list superHeroName's are different so we are going to use that. and to grab that superheroname i am going to use previousElementSimbling.
