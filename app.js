@@ -7,7 +7,19 @@ class SuperHeroEntry {
 	}
 }
 
-class SuperHeroList {}
+class SuperHeroList {
+	addSuperHero(entry) {
+		const listData = document.querySelector('.Superhero-list-data');
+		const listContainer = document.createElement('ul');
+		listContainer.setAttribute('id', 'list');
+
+		listContainer.innerHTML += `
+				<li>${entry.superHeroName}</li>
+				<li>${entry.superHeroPower}</li>
+				<li>${entry.superHeroUniverse}</li>
+				<i class="fas fa-trash"></i> `;
+	}
+}
 
 // - - - - - - - -- - -  -- -- - - - - -- - - - - - - Events  - -- -- - - - - - -  --- - -- - - - - -- - --  -- -  - - - -- - - - -
 
@@ -23,7 +35,11 @@ form.addEventListener('submit', function (e) {
 	];
 
 	//instantiating the SuperHeroEntry class
-	const entry = new SuperHeroEntry(superHeroName, superHeroUniverse, superHeroPower);
+	const entry = new SuperHeroEntry(
+		superHeroName,
+		superHeroUniverse,
+		superHeroPower
+	);
 
 	//instantiating the SuperList class
 	const list = new SuperHeroList();
