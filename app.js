@@ -58,12 +58,20 @@ form.addEventListener('submit', function (e) {
 	//instantiating the SuperList class
 	const list = new SuperHeroList();
 
-	// creaing methods for SuperHero list
-	//to add superHero
-	list.addSuperHero(entry);
-
-	//to clear inputs
-	list.clearInputs();
+	//validate the form if one or more of the input fiels are empty
+	if (
+		superHeroName === '' ||
+		superHeroUniverse === '' ||
+		superHeroPower === ''
+	) {
+		list.validationError();
+	} else {
+		//to add superHero
+		list.addSuperHero(entry);
+		//to clear inputs
+		list.clearInputs();
+		list.validationSuccess();
+	}
 
 	console.log(list);
 });
