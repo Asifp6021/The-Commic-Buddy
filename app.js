@@ -7,9 +7,11 @@ class SuperHeroEntry {
 	}
 }
 
+// SuperHeroList class holds all the methods
 class SuperHeroList {
+	// adding superHeroes
 	addSuperHero(entry) {
-		const listData = document.querySelector('.Superhero-list-data');
+		const listData = document.querySelector('.superhero-list-data');
 		const listContainer = document.createElement('ul');
 		listContainer.setAttribute('id', 'list');
 
@@ -18,6 +20,17 @@ class SuperHeroList {
 				<li>${entry.superHeroPower}</li>
 				<li>${entry.superHeroUniverse}</li>
 				<i class="fas fa-trash"></i> `;
+
+		listData.appendChild(listContainer);
+	}
+
+	// clear SuperHero Inputs field
+	clearInputs() {
+		[
+			document.querySelector('#name').value,
+			document.querySelector('#universe').value,
+			document.querySelector('#power').value,
+		] = ['', '', ''];
 	}
 }
 
@@ -25,6 +38,7 @@ class SuperHeroList {
 
 const form = document.querySelector('.superhero-form');
 
+// form-submissin event-listener
 form.addEventListener('submit', function (e) {
 	e.preventDefault();
 
@@ -47,5 +61,9 @@ form.addEventListener('submit', function (e) {
 	// creaing methods for SuperHero list
 	//to add superHero
 	list.addSuperHero(entry);
+
+	//to clear inputs
+	list.clearInputs();
+
 	console.log(list);
 });
