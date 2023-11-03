@@ -76,9 +76,21 @@ class StoreSuperHero {
 		superHeroList.push(entry);
 		localStorage.setItem('superHeros', JSON.stringify(superHeroList));
 	}
+
+	// showing data from ls
+	static displaySuperHero() {
+		const superHerosList = StoreSuperHero.getSuperHero();
+
+		superHerosList.forEach((superHero) => {
+			const list = new SuperHeroList();
+			list.addSuperHero(superHero);
+		});
+	}
 }
 
 // - - - - - - - -- - -  -- -- - - - - -- - - - - - - Events  - -- -- - - - - - -  --- - -- - - - - -- - --  -- -  - - - -- - - - -
+
+document.addEventListener('DOMContentLoaded', StoreSuperHero.displaySuperHero);
 
 const form = document.querySelector('.superhero-form');
 
@@ -118,7 +130,6 @@ form.addEventListener('submit', function (e) {
 		list.validationSuccess();
 		//adding superHero to local storage
 		StoreSuperHero.addSuperHero(entry);
-
 	}
 
 	console.log(list);
