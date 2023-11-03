@@ -86,6 +86,19 @@ class StoreSuperHero {
 			list.addSuperHero(superHero);
 		});
 	}
+
+	//removing superhero from the ls
+	static removeSuperHero(clickedSuperHero) {
+		const superherosList = StoreSuperHero.getSuperHero();
+
+		superherosList.forEach((superhero, index) => {
+			if (superhero.superHeroName === clickedSuperHero) {
+				superherosList.splice(index, 1);
+			}
+		})
+
+		localStorage.setItem('superHeros', JSON.stringify(superherosList));
+	}
 }
 
 // - - - - - - - -- - -  -- -- - - - - -- - - - - - - Events  - -- -- - - - - - -  --- - -- - - - - -- - --  -- -  - - - -- - - - -
@@ -144,11 +157,11 @@ listData.addEventListener('click', function (e) {
 		const trash = e.target.parentNode;
 
 		const clickedSuperHero =
-			e.target.previousElementSimbling.previousElementSimbling
-				.previousElementSimbling;
+			e.target.previousElementSibling.previousElementSibling
+			.previousElementSibling.textContent;
 
 		StoreSuperHero.removeSuperHero(clickedSuperHero);
-		
+
 		trash.remove();
 	}
 });
