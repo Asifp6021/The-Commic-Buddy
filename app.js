@@ -45,7 +45,9 @@ class SuperHeroList {
 
 	//validation success function
 	validationSuccess() {
-		document.querySelector('.validate-success').classList.add('show-validation');
+		document
+			.querySelector('.validate-success')
+			.classList.add('show-validation');
 		setTimeout(() => {
 			document
 				.querySelector('.validate-success')
@@ -96,3 +98,11 @@ form.addEventListener('submit', function (e) {
 	console.log(list);
 });
 
+// deleting the superHro
+const listData = document.querySelector('.superhero-list-data');
+listData.addEventListener('click', function (e) {
+	if (e.target.className === 'fas fa-trash') {
+		const trash = e.target.parentNode;
+		trash.remove();
+	}
+});
