@@ -32,6 +32,26 @@ class SuperHeroList {
 			document.querySelector('#power').value,
 		] = ['', '', ''];
 	}
+
+	//validation error function
+	validationError() {
+		document.querySelector('.validate-error').classList.add('show-validation');
+		setTimeout(() => {
+			document
+				.querySelector('.validate-error')
+				.classList.remove('show-validation');
+		}, 2500);
+	}
+
+	//validation success function
+	validationSuccess() {
+		document.querySelector('.validate-success').classList.add('show-validation');
+		setTimeout(() => {
+			document
+				.querySelector('.validate-success')
+				.classList.remove('show-validation');
+		}, 1500);
+	}
 }
 
 // - - - - - - - -- - -  -- -- - - - - -- - - - - - - Events  - -- -- - - - - - -  --- - -- - - - - -- - --  -- -  - - - -- - - - -
@@ -58,7 +78,7 @@ form.addEventListener('submit', function (e) {
 	//instantiating the SuperList class
 	const list = new SuperHeroList();
 
-	//validate the form if one or more of the input fiels are empty
+	//validate the form if one or more of the input fields are empty
 	if (
 		superHeroName === '' ||
 		superHeroUniverse === '' ||
@@ -75,3 +95,4 @@ form.addEventListener('submit', function (e) {
 
 	console.log(list);
 });
+
