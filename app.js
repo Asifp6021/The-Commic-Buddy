@@ -56,7 +56,9 @@ class SuperHeroList {
 	}
 }
 
+// storing to the localStorage
 class StoreSuperHero {
+	//get superHero from ls
 	static getSuperHero() {
 		let superHeros;
 		if (localStorage.getItem('superHeros') === null) {
@@ -65,6 +67,14 @@ class StoreSuperHero {
 			superHeros = JSON.parse(localStorage.getItem('superHeros'));
 		}
 		return superHeros;
+	}
+
+	// add superHero to ls
+	static addSuperHero(entry) {
+		const superHeroList = StoreSuperHero.getSuperHero();
+
+		superHeroList.push(entry);
+		localStorage.setItem('superHeros', JSON.stringify(superHeroList));
 	}
 }
 
